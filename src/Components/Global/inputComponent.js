@@ -10,6 +10,8 @@ export const component = props => {
         value={props.text}
         returnKeyType="go"
         multiline={props.multiLine}
+        selectionColor={"#2A2D2D"}
+        secureTextEntry={props.password}
         numberOfLines={props.numberOfLines}
         maxLength={props.maxLength}
         keyboardType={props.Keyboard == null ? 'default' : props.Keyboard}
@@ -31,7 +33,15 @@ const style = StyleSheet.create({
     shadowOffset: {width: 0, height: 3},
     shadowOpacity: 0.55,
     shadowRadius: 2,
-    elevation: 5,
+
+    ...Platform.select({
+      ios: {
+        elevation: 5,
+      },
+      android: {
+        elevation: 0,
+      },
+    }),
   },
   textCointaner: {
     width: '100%',

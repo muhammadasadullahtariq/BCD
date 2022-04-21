@@ -1264,6 +1264,16 @@
   "resolved" "https://registry.npmjs.org/@react-native-firebase/database/-/database-12.9.3.tgz"
   "version" "12.9.3"
 
+"@react-native-firebase/firestore@^12.9.3":
+  "integrity" "sha512-vz7gPbb7eFxjKTRTe/XFsFq+feL1ngg8ukKNzxs/X7dj9SZ9iuOeqzLOFBBl6xcUS2adKkp8pfIIN9JeWUZmLA=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/firestore/-/firestore-12.9.3.tgz"
+  "version" "12.9.3"
+
+"@react-native-firebase/storage@^12.9.3":
+  "integrity" "sha512-tBdpZkM88rGVLzPMRJc2/tG1EqQJvdtGs/iXIPBtuFj7uUfaRXQUAzbGDUgzLfTQ8t2XmSiyNEz1V7wYrHkt7w=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/storage/-/storage-12.9.3.tgz"
+  "version" "12.9.3"
+
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
   "resolved" "https://registry.npmjs.org/@react-native/assets/-/assets-1.0.0.tgz"
@@ -2643,9 +2653,9 @@
   "version" "1.4.52"
 
 "eme-encryption-scheme-polyfill@^2.0.1":
-  "integrity" "sha512-44CNFMsqzHdKHrzWxlS7xZ8KUHn5XutBqpmCuWzNIynmAyFInHrrD3ozv/RvK9ZhgV6QY6Easx8EWAmxteNodg=="
-  "resolved" "https://registry.npmjs.org/eme-encryption-scheme-polyfill/-/eme-encryption-scheme-polyfill-2.0.3.tgz"
-  "version" "2.0.3"
+  "integrity" "sha512-MHYJX1v145Pjj2YJTrVVuJOYyXrxGVy8LWf6kV5M4jrV/GyoeuJKyTuD+GaD+VAiE8Ip+MptiH4dXk6ZVmMNow=="
+  "resolved" "https://registry.npmjs.org/eme-encryption-scheme-polyfill/-/eme-encryption-scheme-polyfill-2.0.4.tgz"
+  "version" "2.0.4"
 
 "emittery@^0.8.1":
   "integrity" "sha512-uDfvUjVrfGJJhymx/kz6prltenw1u7WrCg1oa94zYY8xxVpLLUu045LAT0dhDZdXG58/EpPL/5kA180fQ/qudg=="

@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     marginBottom: 10,
     overflow: 'hidden',
-    paddingTop: 5,
+    paddingTop: 8,
   },
 });
 

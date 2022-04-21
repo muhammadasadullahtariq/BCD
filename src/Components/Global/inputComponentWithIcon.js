@@ -12,6 +12,7 @@ const screen = props => {
       <InputComponent
         style={[{width: '80%'}, props.style]}
         placeHolder={props.placeHolder}
+        password={props.password}
         text={props.text}
         textHandler={props.textHandler}
         onSubmit={props.onSubmit}
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: -40,
-    zIndex: 1,
+    zIndex: 5,
     shadowColor: '#2A2D2D',
     shadowOffset: {width: 0, height: 3},
     shadowOpacity: 0.55,

@@ -14,6 +14,7 @@ import {Image, StyleSheet, View} from 'react-native';
 import imageSource from '../Asserts/splashImage.png';
 import Orientation from 'react-native-orientation';
 import {CommonActions} from '@react-navigation/native';
+import auth from '@react-native-firebase/auth';
 
 const screen = ({navigation, route}) => {
   let userFlag = false;
@@ -22,90 +23,6 @@ const screen = ({navigation, route}) => {
   const [screenTime, setScreenTime] = useState(3);
   const [timeFinish, setTimeFinish] = useState(false);
   let interval;
-  async function getUserDetail() {
-    //console.log('i called');
-    global.clearSkipArr = true;
-    try {
-      auth().onAuthStateChanged(async user => {
-        if (user) {
-          console.log('here am i', user.phoneNumber);
-          let resultUserExist = await checkUserExist(user.phoneNumber);
-          console.log('result of user:', resultUserExist);
-          //console.log(resultUserExist);
-          if (resultUserExist == 'User not found') {
-            userFlag = false;
-            role = -5;
-            userDataGetFlag = true;
-          } else {
-            global.id = resultUserExist.data._id;
-            userFlag = true;
-            role = resultUserExist.data.role;
-            userDataGetFlag = true;
-          }
-        } else {
-          userFlag = false;
-          userDataGetFlag = true;
-        }
-      });
-      // auth().onAuthStateChanged(async user => {
-
-      // });
-    } catch (err) {
-      console.warn('error', err);
-      userDataGetFlag = true;
-    }
-  }
-
-  function navigateToOtherScreen() {
-    if (userFlag) {
-      navigation.reset;
-      if (role == 1) {
-        navigation.dispatch(
-          CommonActions.reset({
-            index: 1,
-            routes: [{name: 'PublicUser'}],
-          }),
-        );
-        // navigation.reset({
-        //   index: 0, //the stack index
-        //   routes: [
-        //     {
-        //       name: 'PublicUser',
-        //     }, //Public User Home Screen
-        //   ],
-        // });
-      } else if (role == 2) {
-        navigation.dispatch(
-          CommonActions.reset({
-            index: 1,
-            routes: [{name: 'WasteCollectorMainMenu'}],
-          }),
-        );
-      } else if (role == 3) {
-        navigation.dispatch(
-          CommonActions.reset({
-            index: 1,
-            routes: [{name: 'TraderMainMenu'}],
-          }),
-        );
-      } else if (role == 4) {
-        navigation.dispatch(
-          CommonActions.reset({
-            index: 1,
-            //SupplierMainMenu
-            routes: [{name: 'SupplierMainMenu'}],
-          }),
-        );
-      }
-    } else {
-      //navigation.setParams({role});
-      //console.warn('role', role);
-      navigation.reset({
-        index: 0,
-        routes: [{name: 'Test'}],
-      });
-    }
-  }
 
   function timerForotp() {
     interval = setInterval(() => {
@@ -122,15 +39,27 @@ const screen = ({navigation, route}) => {
 
   useEffect(() => {
     //Orientation.lockToPortrait();
+    //auth().signOut();
     if (!timeFinish) timerForotp();
     else {
-      navigation.reset;
-      navigation.dispatch(
-        CommonActions.reset({
-          index: 1,
-          routes: [{name: 'Login'}],
-        }),
-      );
+
+      if (auth().currentUser != null) {
+        navigation.reset;
+        navigation.dispatch(
+          CommonActions.reset({
+            index: 1,
+            routes: [{name: 'Home'}],
+          }),
+        );
+      } else {
+        navigation.reset;
+        navigation.dispatch(
+          CommonActions.reset({
+            index: 1,
+            routes: [{name: 'Login'}],
+          }),
+        );
+      }
     }
   }, [timeFinish]);
 

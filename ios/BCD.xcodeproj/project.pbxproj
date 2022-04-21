@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* BCDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* BCDTests.m */; };
+		047889DC27A104CA007A0A0F /* google-services.json in Resources */ = {isa = PBXBuildFile; fileRef = 047889DB27A104CA007A0A0F /* google-services.json */; };
+		047889DE27A10818007A0A0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047889DD27A10818007A0A0F /* GoogleService-Info.plist */; };
 		131710B4CA4CFFE0A2D9A12A /* libPods-BCD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB45F46B99B730B65F64BB6 /* libPods-BCD.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -31,6 +33,8 @@
 		00E356EE1AD99517003FC87E /* BCDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BCDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* BCDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCDTests.m; sourceTree = "<group>"; };
+		047889DB27A104CA007A0A0F /* google-services.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "google-services.json"; path = "../../../../../Downloads/google-services.json"; sourceTree = "<group>"; };
+		047889DD27A10818007A0A0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05725F27CFD94B4082B0B6B5 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		07FA4EC007214E9981117F38 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		1121357853B9AC3CD0D7D1D8 /* Pods-BCD-BCDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCD-BCDTests.release.xcconfig"; path = "Target Support Files/Pods-BCD-BCDTests/Pods-BCD-BCDTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				047889DD27A10818007A0A0F /* GoogleService-Info.plist */,
+				047889DB27A104CA007A0A0F /* google-services.json */,
 				13B07FAE1A68108700A75B9A /* BCD */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* BCDTests */,
@@ -292,7 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				047889DE27A10818007A0A0F /* GoogleService-Info.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				047889DC27A104CA007A0A0F /* google-services.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

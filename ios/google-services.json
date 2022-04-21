@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "371142652726",
+    "project_id": "brain-controlled-drone",
+    "storage_bucket": "brain-controlled-drone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371142652726:android:ded857773185f5b600b997",
+        "android_client_info": {
+          "package_name": "com.bcd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "371142652726-1pacqb1bu7mnd5ae9j7dm1qm6j3dtdmh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWWgnqQusg4f7DxfR35OdJu-h3TX6hQBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "371142652726-1pacqb1bu7mnd5ae9j7dm1qm6j3dtdmh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
