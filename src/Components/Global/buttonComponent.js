@@ -18,6 +18,7 @@ const component = props => {
             backgroundColor: '#2A2D2D',
             borderRadius: 30,
             alignSelf: 'center',
+            alignItems: 'center',
           },
           props.style,
         ]}>

@@ -33,7 +33,7 @@ function Navigation() {
           },
           headerTintColor: 'white',
         }}
-        initialRouteName="Home">
+        initialRouteName="Splash">
         <Stack.Screen name="Test" component={TestScreen} />
         <Stack.Screen
           name="Splash"
@@ -71,7 +71,6 @@ function Navigation() {
           options={{title: 'Video Player', headerShown: false}}
         />
         <Stack.Screen
-
           name="ImageView"
           component={ImageView}
           options={{title: 'Image View', headerShown: false}}

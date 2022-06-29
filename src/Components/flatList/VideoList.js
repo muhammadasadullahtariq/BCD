@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {View, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Image, StyleSheet, TouchableOpacity,Dimensions} from 'react-native';
 import InfoText from '../Global/infoText';
 import fireStorage from '@react-native-firebase/storage';
 import auth from '@react-native-firebase/auth';
@@ -43,13 +43,18 @@ export default function (props) {
             fullscreenOrientation="landscape"
             resizeMode="contain"
             paused={true}
-            volume={0.5}
+            volume={0}
           />
           <View style={{alignItems: 'flex-start', marginTop: 10}}>
             <InfoText
               text={props.data.name}
+              viewStyle={{width: Dimensions.get('window').width * 0.9,}}
               numberOfLines={1}
-              style={{marginBottom: 10, fontSize: 20, width: '90%'}}
+              style={{
+                marginBottom: 10,
+                fontSize: 20,
+                width: '90%',
+              }}
             />
             <InfoText text={props.data.date} />
           </View>

@@ -16,7 +16,8 @@ const screen = props => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    width: Dimensions.get('window').width * 0.9,
+    //width: Dimensions.get('window').width * 0.9,
+   
   },
   textContainer: {
     fontSize: 15,

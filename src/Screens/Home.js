@@ -12,8 +12,8 @@ import auth from '@react-native-firebase/auth';
 import {CommonActions} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconWithText from '../Components/dashBoard/iconWithText';
-import VideoList from '../Components/flatList/VideoList';
 import firestore from '@react-native-firebase/firestore';
+import EditIcon from 'react-native-vector-icons/FontAwesome5';
 
 const screen = ({navigation, route}) => {
   const [menuArr, setMenuArr] = useState([
@@ -27,6 +27,7 @@ const screen = ({navigation, route}) => {
   const [imagesList, setImagesList] = useState([]);
 
   useEffect(() => {
+    console.log(auth().currentUser.uid);
     firestore()
       .collection('usersPersonalData')
       .doc(auth().currentUser.uid)
@@ -34,6 +35,7 @@ const screen = ({navigation, route}) => {
   }, []);
 
   const onResult = data => {
+    console.log(data);
     if (data.name == undefined) {
       data = data._data;
     }
@@ -64,18 +66,17 @@ const screen = ({navigation, route}) => {
     );
   };
 
-  const onPressHandler = (iconName) => {
-   if(iconName == 'ios-videocam-outline'){
-     navigation.navigate('VideoList', {
-       data: videoList,
-     });
-   }
-    else if(iconName == 'ios-camera-outline'){
+  const onPressHandler = iconName => {
+    if (iconName == 'ios-videocam-outline') {
+      navigation.navigate('VideoList', {
+        data: videoList,
+      });
+    } else if (iconName == 'ios-camera-outline') {
       navigation.navigate('ImageList', {
         data: imagesList,
       });
     }
-  }
+  };
 
   return (
     <View style={styles.mainContainer}>
@@ -86,8 +87,13 @@ const screen = ({navigation, route}) => {
           </TouchableOpacity>
         </View>
         <View style={styles.userDetailContainer}>
-          <Image source={imageSource} style={styles.imageContainer} />
-          <InfoText text={userName} style={{color: 'white'}} />
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Image source={imageSource} style={styles.imageContainer} />
+            <InfoText text={userName} style={{color: 'white'}} />
+          </View>
+          <View style={{marginRight: 20}}>
+            <EditIcon name="user-edit" color={'white'} size={30} />
+          </View>
         </View>
       </View>
       <FlatList
@@ -99,7 +105,11 @@ const screen = ({navigation, route}) => {
           justifyContent: 'space-evenly',
         }}
         renderItem={items => (
-          <IconWithText icon={items.item.icon} text={items.item.text} onPress={onPressHandler}/>
+          <IconWithText
+            icon={items.item.icon}
+            text={items.item.text}
+            onPress={onPressHandler}
+          />
         )}
       />
     </View>
@@ -135,6 +145,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginHorizontal: 10,
     alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+    flex: 1,
   },
 });
 
