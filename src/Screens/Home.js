@@ -91,9 +91,9 @@ const screen = ({navigation, route}) => {
             <Image source={imageSource} style={styles.imageContainer} />
             <InfoText text={userName} style={{color: 'white'}} />
           </View>
-          <View style={{marginRight: 20}}>
+          {/* <View style={{marginRight: 20}}>
             <EditIcon name="user-edit" color={'white'} size={30} />
-          </View>
+          </View> */}
         </View>
       </View>
       <FlatList
